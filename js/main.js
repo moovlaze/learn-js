@@ -1,3 +1,5 @@
+"use strict";
+
 let title = prompt("как называется ваш проект?", "мой проект");
 let screens = prompt(
 	"Какие типы экранов нужно разработать?",
@@ -17,28 +19,49 @@ let service2 = prompt(
 let servicePrice2 = +prompt("Сколько это будет стоить?", "2500");
 
 let rollback = 32;
-let fullPrice = screenPrice + servicePrice1 + servicePrice2;
-let servicePercentPrice = Math.ceil(fullPrice - fullPrice * (rollback / 100));
 
-console.log(typeof title, typeof fullPrice, typeof adaptiv);
-console.log(screens.length);
-console.log(`Стоимость верстки экранов ${screenPrice} рублей`);
-console.log(`Стоимость разработки сайта ${fullPrice} рублей`);
-console.log(screens.toLowerCase().split(" "));
-console.log(fullPrice * (rollback / 100));
-console.log(servicePercentPrice);
+let fullPrice, servicePercentPrice, allServicePrices;
 
-switch (true) {
-	case fullPrice >= 30000:
-		console.log("Даем скидку в 10%");
-		break;
-	case fullPrice >= 15000 && fullPrice < 30000:
-		console.log("Даем скидку в 5%");
-		break;
-	case fullPrice < 15000 && fullPrice >= 0:
-		console.log("Скидка не предусмотрена");
-		break;
-	default:
-		console.log("Что то пошло не так");
-		break;
+const showTypeOf = function (variable) {
+	console.log(`${variable} -`, typeof variable);
+};
+
+const getRollbackMessage = function (price) {
+	switch (true) {
+		case price >= 30000:
+			return "Даем скидку в 10%";
+		case price >= 15000 && price < 30000:
+			return "Даем скидку в 5%";
+		case price < 15000 && price >= 0:
+			return "Скидка не предусмотрена";
+		default:
+			return "Что то пошло не так";
+	}
+};
+
+const getAllServicePrices = function (price1, price2) {
+	return price1 + price2;
+};
+
+function getFullPrice(price1, allPrices) {
+	return price1 + allPrices;
 }
+
+const getTitle = function (text) {
+	return text.trim()[0].toUpperCase() + text.trim().slice(1);
+};
+
+const getServicePercentPrices = function (price) {
+	return Math.ceil(price - price * (rollback / 100));
+};
+
+showTypeOf(title);
+showTypeOf(fullPrice);
+showTypeOf(adaptiv);
+
+allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
+fullPrice = getFullPrice(screenPrice, allServicePrices);
+servicePercentPrice = getServicePercentPrices(fullPrice);
+
+console.log(getRollbackMessage(fullPrice));
+console.log("servicePercentPrice -", servicePercentPrice);
