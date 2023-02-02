@@ -1,20 +1,23 @@
 "use strict";
 
-let title;
-let screens;
-let screenPrice;
-let adaptiv;
+const title = document.getElementsByTagName("h1")[0];
+const handlerBtn = document.getElementsByClassName("handler_btn");
+const screenBtn = document.querySelector(".screen-btn");
+const otherItemsPercents = document.querySelectorAll(".other-items.percent");
+const otherItemsNumbers = document.querySelectorAll(".other-items.number");
+const inputRange = document.querySelector(".rollback input[type='range']");
+const rangeValue = document.querySelector(".rollback .range-value");
+const totalInputs = document.getElementsByClassName("total-input");
 
-let service1;
-let servicePrice1;
-let service2;
-let servicePrice2;
+const inputTotal = totalInputs[0];
+const inputTotalCount = totalInputs[1];
+const inputTotalCountOther = totalInputs[2];
+const inputTotalFullCount = totalInputs[3];
+const inputTotalCountRollback = totalInputs[4];
 
-let rollback = 32;
+let screen = document.querySelectorAll(".screen");
 
-let fullPrice, servicePercentPrice, allServicePrices;
-
-const appData = {
+let appData = {
 	title: "",
 	screens: [],
 	screenPrice: 0,
@@ -114,12 +117,9 @@ const appData = {
 		}
 	},
 	logger: function () {
-		console.log(appData.service);
+		console.log(appData.fullPrice);
+		console.log(appData.servicePercentPrice);
 		console.log(appData.allServicePrices);
-		console.log(appData.screens);
-		console.log(appData.screenPrice);
-		console.log(appData.title);
-		console.log(appData.isString("3434ghgh"));
 	},
 };
 
