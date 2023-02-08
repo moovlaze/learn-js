@@ -1,5 +1,5 @@
-# DOM
+# Работа с DOM
 
 ---
 
-**https://learn.javascript.ru/dom-nodes**
+https://learn.javascript.ru/modifying-document
