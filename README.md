@@ -1,5 +1,7 @@
-# Обработка событий. Практика
+# Storage and Cookie
 
 ---
 
-https://learn.javascript.ru/introduction-browser-events
+https://learn.javascript.ru/cookie
+
+https://learn.javascript.ru/json
