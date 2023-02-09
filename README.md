@@ -1,5 +1,5 @@
-# DOM
+# Обработка событий. Практика
 
 ---
 
-**https://learn.javascript.ru/dom-nodes**
+https://learn.javascript.ru/introduction-browser-events
