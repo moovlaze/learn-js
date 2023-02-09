@@ -1,5 +1,5 @@
-# DOM
+# Обработчики событий Особенности их работы
 
 ---
 
-**https://learn.javascript.ru/dom-nodes**
+https://learn.javascript.ru/introduction-browser-events
